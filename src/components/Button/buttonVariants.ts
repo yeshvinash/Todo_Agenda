@@ -21,6 +21,7 @@ export const buttonVariants = cva(
         default: "h-8 px-3 py-1.5",
         sm: "h-8 px-3 py-1.5",
         md: "h-9 px-4 py-1.5",
+        icon: "h-9 w-9",
       },
     },
     defaultVariants: {
