@@ -47,7 +47,7 @@ const TodoForm: React.FC = () => {
 
     const newTodo: TodoType = {
       // Use a stable string id derived from current list length
-      id: todos.length ? `${todos.length + 1}` : "1",
+      id: Date.now(),
       todo: input.todo,
       isCompleted: input.isCompleted,
     };
@@ -102,7 +102,7 @@ const TodoForm: React.FC = () => {
           className="h-10 min-w-28 "
           size={"md"}
         >
-          Add
+          {editId ? "Update" : "Add"}
         </Button>
       </form>
     </>

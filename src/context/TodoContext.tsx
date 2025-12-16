@@ -102,7 +102,7 @@ export const TodoContextProvider: React.FC<TodoContextType> = ({
   }, [setTodos]);
 
   const editTodo = useCallback(
-    (id: number | null) => {
+    (id?: number | null) => {
       if (id == null) return;
       const findTodo = filteredData.find((item: TodoType) => item.id === id);
       if (!findTodo) return;

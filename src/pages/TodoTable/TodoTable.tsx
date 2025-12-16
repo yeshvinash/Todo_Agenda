@@ -150,12 +150,12 @@ const TodoTable: React.FC = () => {
   };
 
   // Helper to convert todo.id to number | null for functions that expect number
-  const getIdAsNumber = (id: number | string | undefined): number | null => {
-    if (id === undefined) return null;
-    if (typeof id === "number") return id;
-    const parsed = Number(id);
-    return isNaN(parsed) ? null : parsed;
-  };
+  // const getIdAsNumber = (id) => {
+  // if (id === undefined) return null;
+  // if (typeof id === "number") return id;
+  // const parsed = Number(id);
+  // return isNaN(parsed) ? null : parsed;
+  // };
 
   // Early return for empty todos (after all hooks)
   if (!todos || todos.length === 0) {
@@ -295,7 +295,7 @@ const TodoTable: React.FC = () => {
                     <Checkbox
                       variant="default"
                       checked={todo.isCompleted}
-                      onClick={() => toggleComplete(getIdAsNumber(todo.id))}
+                      onClick={() => toggleComplete(todo.id)}
                     />
                   </td>
 
@@ -331,7 +331,7 @@ const TodoTable: React.FC = () => {
                   <td className="px-6 py-4 flex items-center gap-2 [&>button]:min-w-[110px]">
                     <Button
                       type="button"
-                      onClick={() => editTodo(getIdAsNumber(todo.id))}
+                      onClick={() => editTodo(todo.id)}
                       variant={"primary"}
                     >
                       <Edit size={14} />
@@ -339,7 +339,7 @@ const TodoTable: React.FC = () => {
                     </Button>
                     <Button
                       type="button"
-                      onClick={() => deleteTodo(getIdAsNumber(todo.id))}
+                      onClick={() => deleteTodo(todo.id)}
                       variant={"danger"}
                     >
                       <Trash2 size={14} />
